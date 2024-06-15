@@ -79,6 +79,10 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+app.get("", (req, res) => {
+  res.send("Welcome to the Billing Pre API");
+});
+
 // Auth Routes
 app.get(
   "/auth/google",
