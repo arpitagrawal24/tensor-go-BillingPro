@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment, useContext } from 'react';
 
-import './Header.css';
+import './header.css';
 import InvoiceModal from '../../modals/InvoiceModal';
 import InvoiceContext from '../../../context/invoice/invoiceContext';
 import DarkContext from '../../../context/dark/darkContext';
