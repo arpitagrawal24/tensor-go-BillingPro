@@ -1,9 +1,12 @@
-import React, { useState, useEffect, Fragment, useContext } from 'react';
-import InvoiceModal from '../modals/InvoiceModal';
-import InvoiceContext from '../../context/invoice/invoiceContext';
-import DarkContext from '../../context/dark/darkContext';
-import iconPlus from '../../images/icon-plus.svg';
-import iconArrowDown from '../../images/icon-arrow-down.svg';
+import { useState, useEffect, Fragment, useContext } from 'react';
+
+import './Header.css';
+import InvoiceModal from '../../modals/InvoiceModal';
+import InvoiceContext from '../../../context/invoice/invoiceContext';
+import DarkContext from '../../../context/dark/darkContext';
+import iconPlus from '../../../assets/images/icon-plus.svg';
+import iconArrowDown from '../../../assets/images/icon-arrow-down.svg';
+
 const Header = () => {
   // Component Level State
   const [run, setRun] = useState(false);
@@ -20,6 +23,8 @@ const Header = () => {
     filterCheck,
     filters,
   } = invoiceContext;
+
+  // console.log(invoiceContext);
 
   // Allows items to load before no items image flashes
   useEffect(() => {

@@ -1,0 +1,249 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    height: 60px;
+    margin-top: 60px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  #header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #header-title {
+    font-size: 32px;
+  }
+  
+  #header-title.dark {
+    color: #ffffff;
+  }
+  
+  #mobile-title {
+    display: none;
+    font-size: 20px;
+  }
+  
+  #mobile-title.dark {
+    color: #ffffff;
+  }
+  
+  #header-numInvoices {
+    font-size: 12px;
+  }
+  
+  #header-numInvoices.dark {
+    color: #ffffff;
+  }
+  
+  #mobile-numInvoices {
+    display: none;
+    font-size: 12px;
+  }
+  
+  #mobile-numInvoices.dark {
+    color: #ffffff;
+  }
+  
+  #header-noInvoices {
+    font-size: 12px;
+  }
+  
+  #header-noInvoices.dark {
+    color: #ffffff;
+  }
+  
+  #mobile-noInvoices {
+    display: none;
+    font-size: 12px;
+  }
+  
+  #mobile-noInvoices.dark {
+    color: #ffffff;
+  }
+  
+  #header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  #filter-dropdown {
+    width: 130px;
+    height: 15px;
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  #header-arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+  }
+  
+  #filter-title {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  #filter-title.dark {
+    color: #ffffff;
+  }
+  
+  #mobile-filter {
+    display: none;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  #mobile-filter.dark {
+    color: #ffffff;
+  }
+  
+  #header-arrow:hover {
+    cursor: pointer;
+  }
+  
+  #filter-choices {
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    border-radius: 8px;
+    background: #ffffff;
+    display: none;
+    z-index: 10;
+    width: 192px;
+    height: 128px;
+    margin-left: -40px;
+  }
+  
+  #filter-choices.dark {
+    background: #252945;
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-family: 'Spartan', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e2139;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 30px;
+    margin-top: 12px;
+  }
+  
+  .container.dark {
+    color: #ffffff;
+  }
+  
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container input:checked ~ .checkmark {
+    background: #7c5dfa;
+  }
+  
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background: #dfe3fa;
+    border-radius: 2px;
+  }
+  
+  .checkmark.dark {
+    background: #1e2139;
+  }
+  
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 4px;
+    top: 0;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .container:hover .checkmark {
+    border: 1px solid #7c5dfa;
+  }
+  
+  #filter-dropdown:hover {
+    cursor: pointer;
+  }
+  
+  #filter-dropdown:hover #filter-choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  #new-invoice-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 140px;
+    height: 45px;
+    border-radius: 24px;
+    background: #7c5dfa;
+    color: #ffffff;
+  }
+  
+  #new-invoice-icon {
+    height: 32px;
+    width: 32px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+  }
+  
+  #new-invoice-icon img {
+    height: 12px;
+    width: 12px;
+  }
+  
+  #new-invoice-btn-words {
+    font-family: 'Spartan', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  #mobile-new-invoice-btn-words {
+    display: none;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  #new-invoice-container:hover {
+    cursor: pointer;
+    background: #9277ff;
+  }

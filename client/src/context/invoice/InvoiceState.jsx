@@ -19,7 +19,6 @@ import {
   INVOICE_ERROR,
   GET_INVOICES,
 } from '../types';
-// import { use } from '../../../../server/routes/invoices';
 
 const InvoiceState = (props) => {
   // Set initial state
@@ -39,7 +38,7 @@ const InvoiceState = (props) => {
   // Get Invoices
   const getInvoices = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/invoices');
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/invoices`);
 
       dispatch({
         type: GET_INVOICES,
@@ -55,10 +54,10 @@ const InvoiceState = (props) => {
 
   // Add Invoice
   const [userdata, setUserdata] = useState({});
-  console.log("response", userdata)
+  // console.log("response", userdata)
   const getUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/login/success", { withCredentials: true });
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/login/success`, { withCredentials: true });
 
       setUserdata(response.data.user)
     } catch (error) {
@@ -94,7 +93,7 @@ const InvoiceState = (props) => {
     };
 
     try {
-      const res = await axios.post('http://localhost:3001/api/invoices', invoice, config);
+      const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/invoices`, invoice, config);
       dispatch({
         type: ADD_INVOICE,
         payload: res.data,
@@ -170,7 +169,7 @@ const InvoiceState = (props) => {
 
     try {
       const res = await axios.put(
-        `http://localhost:3001/api/invoices/${newCurrUser._id}`,
+        `${import.meta.env.VITE_SERVER_URL}/api/invoices/${newCurrUser._id}`,
         newCurrUser,
         config
       );
@@ -218,7 +217,7 @@ const InvoiceState = (props) => {
       payload: newInvoices,
     });
     try {
-      await axios.delete(`http://localhost:3001/api/invoices/${currentUser._id}`);
+      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/api/invoices/${currentUser._id}`);
     } catch (err) {
       dispatch({
         type: INVOICE_ERROR,
@@ -245,7 +244,7 @@ const InvoiceState = (props) => {
 
     try {
       const res = await axios.put(
-        `http://localhost:3001/api/invoices/${currentUser._id}`,
+        `${import.meta.env.VITE_SERVER_URL}/api/invoices/${currentUser._id}`,
         updatedInvoice,
         config
       );

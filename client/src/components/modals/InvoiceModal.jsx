@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import ItemsCard from './ItemsCard';
 import InvoiceContext from '../../context/invoice/invoiceContext';
 import DarkContext from '../../context/dark/darkContext';
-import iconArrowDown from '../../images/icon-arrow-down.svg';
-import iconPlus from '../../images/icon-plus.svg';
+import iconArrowDown from '../../assets/images/icon-arrow-down.svg';
+import iconPlus from '../../assets/images/icon-plus.svg';
 const InvoiceModal = () => {
   // Declare and destructure context
   const invoiceContext = useContext(InvoiceContext);
@@ -23,7 +23,7 @@ const InvoiceModal = () => {
   // Set Initial State
   const [invoice, setInvoice] = useState({
     id: '',
-    googleId:'1234',
+    googleId: '1234',
     createdAt: '',
     paymentDue: '',
     description: '',
@@ -76,7 +76,6 @@ const InvoiceModal = () => {
       createdAt: [year, month, day].join('-'),
       paymentDue: initPaymentDue,
     });
-    // eslint-disable-next-line
   }, []);
 
   // Effect to set state if CurrentUser
@@ -105,7 +104,6 @@ const InvoiceModal = () => {
 
       setItems(newCurUserItems);
     }
-    // eslint-disable-next-line
   }, []);
 
   // Effect to fade in/out modal
@@ -115,7 +113,6 @@ const InvoiceModal = () => {
         document.getElementById('invoice-modal').classList.add('fade-in');
       }
     }, 100);
-    // eslint-disable-next-line
   }, []);
 
   // Bill From
@@ -143,10 +140,10 @@ const InvoiceModal = () => {
       e.target.id === 'day'
         ? 1
         : e.target.id === 'week'
-        ? 7
-        : e.target.id === 'two-weeks'
-        ? 14
-        : 30;
+          ? 7
+          : e.target.id === 'two-weeks'
+            ? 14
+            : 30;
 
     const tempPaymentDue = incrementDate(createdAt, tempPaymentTerms + 1);
 
@@ -490,11 +487,11 @@ const InvoiceModal = () => {
       ? invoice.status === 'discard'
         ? discardClick()
         : invoice.status === 'pending'
-        ? addValidate(invoice, senderAddress, clientAddress, items)
-        : addInvoice(invoice, senderAddress, clientAddress, items)
+          ? addValidate(invoice, senderAddress, clientAddress, items)
+          : addInvoice(invoice, senderAddress, clientAddress, items)
       : !save
-      ? cancelEditClick()
-      : editValidate(invoice, senderAddress, clientAddress, items);
+        ? cancelEditClick()
+        : editValidate(invoice, senderAddress, clientAddress, items);
   };
 
   const userHashId = currentUser ? (
@@ -684,13 +681,13 @@ const InvoiceModal = () => {
                       {paymentTerms === 1
                         ? 'Net 1 day'
                         : paymentTerms === 7
-                        ? 'Net 7 days'
-                        : paymentTerms === 14
-                        ? 'Net 14 days'
-                        : 'Net 30 days'}
+                          ? 'Net 7 days'
+                          : paymentTerms === 14
+                            ? 'Net 14 days'
+                            : 'Net 30 days'}
                     </p>
                     <img
-                      src={iconArrowDown }
+                      src={iconArrowDown}
                       alt='icon-arrow-down'
                     />
                   </div>
@@ -761,13 +758,13 @@ const InvoiceModal = () => {
             {/* Returns if items entered */}
             {items.length > 0
               ? items.map((item) => (
-                  <ItemsCard
-                    key={item.itemId}
-                    item={item}
-                    deleteItem={deleteItem}
-                    updateItems={updateItems}
-                  />
-                ))
+                <ItemsCard
+                  key={item.itemId}
+                  item={item}
+                  deleteItem={deleteItem}
+                  updateItems={updateItems}
+                />
+              ))
               : null}
             <button
               id='modal-add-new-item'
@@ -775,7 +772,7 @@ const InvoiceModal = () => {
               className={dark ? 'dark' : undefined}
             >
               <img
-                src={iconPlus }
+                src={iconPlus}
                 alt='icon-plus'
               />
               <p style={{ marginLeft: '5px' }}>Add New Item</p>

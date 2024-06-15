@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useContext, Fragment } from 'react';
-import InvoiceModal from '../modals/InvoiceModal';
-import DeleteModal from '../modals/DeleteModal';
-import InvoiceContext from '../../context/invoice/invoiceContext';
-import DarkContext from '../../context/dark/darkContext';
-import iconArrowLeft from '../../images/icon-arrow-left.svg';
+import { useState, useEffect, useContext, Fragment } from 'react';
+import './Details.css';
+import InvoiceModal from '../../modals/InvoiceModal';
+import DeleteModal from '../../modals/DeleteModal';
+import InvoiceContext from '../../../context/invoice/invoiceContext';
+import DarkContext from '../../../context/dark/darkContext';
+import iconArrowLeft from '../../../assets/images/icon-arrow-left.svg';
 const Details = ({ currentUser }) => {
   // Declare and destructure context
   const invoiceContext = useContext(InvoiceContext);
@@ -104,10 +105,10 @@ const Details = ({ currentUser }) => {
             style={
               status === 'draft'
                 ? {
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'flex-end',
-                  }
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-end',
+                }
                 : { display: 'flex' }
             }
           >
@@ -118,8 +119,8 @@ const Details = ({ currentUser }) => {
               style={
                 status === 'draft'
                   ? {
-                      marginRight: '5px',
-                    }
+                    marginRight: '5px',
+                  }
                   : undefined
               }
             >

@@ -22,7 +22,7 @@ connectDB();
 // Middleware setup
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -88,8 +88,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173/dashboard",
-    failureRedirect: "http://localhost:5173/login",
+    successRedirect: process.env.CLIENT_URL + "/dashboard",
+    failureRedirect: process.env.CLIENT_URL + "/login",
   })
 );
 
@@ -106,7 +106,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173");
+    res.redirect(process.env.CLIENT_URL);
   });
 });
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import InvoiceContext from '../../context/invoice/invoiceContext';
 import DarkContext from '../../context/dark/darkContext';
-import iconArrowRight from '../../images/icon-arrow-right.svg';
+import iconArrowRight from '../../assets/images/icon-arrow-right.svg';
 const InvoiceItem = ({ invoice }) => {
   // Declare and destructure context
   const invoiceContext = useContext(InvoiceContext);

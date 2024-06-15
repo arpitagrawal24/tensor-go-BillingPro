@@ -1,23 +1,25 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home';
-import Topbar from './Pages/Topbar';
-import Login from './Pages/Login';
-import Dashboard from './Dashboard';
-import Error from './Pages/Error';
+
+import Error from './Pages/error/Error';
+import Login from './Pages/login/Login';
+import Navbar from './Pages/navbar/Navbar';
+import DarkState from './context/dark/DarkState';
+import Dashboard from './Pages/dashboard/Dashboard';
+import InvoiceState from './context/invoice/InvoiceState';
 
 function App() {
   return (
     <Router>
-      <>
-        <Topbar />
-        <Routes>
-          {/* <Route path='/' element={<Home />} /> */}
-          <Route path='/' element={<Login />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-      </>
+      <DarkState>
+        <InvoiceState>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </InvoiceState>
+      </DarkState>
     </Router>
   );
 }

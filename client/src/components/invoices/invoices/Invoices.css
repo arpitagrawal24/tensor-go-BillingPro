@@ -1,0 +1,142 @@
+#invoices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 750px;
+  }
+  
+  #invoices #invoice-list {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  #invoices #invoice-list .invoice-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 75px;
+    background: #ffffff;
+    margin: 8px 0;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+  }
+  
+  #invoices #invoice-list .invoice-item.dark {
+    background: #1e2139;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-id {
+    align-self: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 20px;
+    color: #0c0e16;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-id.dark {
+    color: #ffffff;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-created-at {
+    align-self: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888eb0;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-created-at.dark {
+    color: #dfe3fa;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-client-name {
+    align-self: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #858bb2;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-client-name.dark {
+    color: #ffffff;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-payment-due {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0c0e16;
+  }
+  
+  #invoices #invoice-list .invoice-item .item-payment-due.dark {
+    color: #ffffff;
+  }
+  
+  #invoices #invoice-list .invoice-item .colored-part-and-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #invoices #invoice-list .invoice-item .colored-part-and-arrow .item-status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 40px;
+    align-self: center;
+    border-radius: 6px;
+    margin-left: -20px;
+  }
+  
+  #invoices #invoice-list .invoice-item .colored-part-and-arrow .item-status-container .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  #invoices #invoice-list .invoice-item .colored-part-and-arrow .item-status-container .item-status {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  #invoices #invoice-list .invoice-item .colored-part-and-arrow img {
+    margin-left: 20px;
+  }
+  
+  #invoices #invoice-list .invoice-item:hover {
+    cursor: pointer;
+    border: 1px solid #7c5dfa;
+    height: 73px;
+  }
+  
+  /* No Invoices Image */
+  #invoices #empty-container {
+    margin: 2rem 0;
+    width: 280px;
+    height: 350px;
+    text-align: center;
+  }
+  
+  #invoices #empty-container img {
+    margin-bottom: 50px;
+  }
+  
+  #invoices #empty-container h2 {
+    margin-bottom: 25px;
+  }
+  
+  #invoices #empty-container h2.dark {
+    color: #ffffff;
+  }
+  
+  #invoices #empty-container p {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  #invoices #empty-container p.dark {
+    color: #dfe3fa;
+  }

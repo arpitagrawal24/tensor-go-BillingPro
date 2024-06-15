@@ -2,28 +2,6 @@
 @media (max-width: 900px) {
   #main-app {
     height: 100vh;
-    #navbar {
-      height: 100px;
-      width: 100vw;
-      border-radius: 0;
-
-      #mode-toggle {
-        top: 40px;
-        left: 80%;
-      }
-
-      #horizontal-line {
-        height: 100px;
-        width: 1px;
-        top: 0;
-        left: 87%;
-      }
-
-      #prof-pic {
-        left: 89%;
-        top: 15px;
-      }
-    }
 
     #header {
       width: 700px;
@@ -112,7 +90,6 @@
   }
 }
 
-// // Phones
 @media (max-width: 500px) {
   #main-app {
     #navbar {
